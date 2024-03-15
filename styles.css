@@ -1,0 +1,46 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#display{
+    margin-bottom: 20px;
+}
+
+#buttonHolder{
+    display: flex;
+    height: 200px;
+    
+}
+
+#numberHolder{
+    width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#operatorHolder{
+    display: flex;
+    flex-direction: column;
+}
+
+#equals{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.number,
+.operators{
+    height:50px;
+    width:50px;
+}
+
+.operators{
+    background-color: lightgray;
+}
+
+.number{
+    background-color: lightcoral;
+}
