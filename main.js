@@ -5,19 +5,19 @@ let display = 0
 let result = 0
 
 function add(num1, num2){
-    return num1 + num2;
+    return result = Number(num1) + Number(num2);
 }
 
 function subtract(num1, num2){
-    return num1 - num2;
+    return result = Number(num1) - Number(num2);
 }
 
 function multiply(num1, num2){
-    return num1 * num2;
+    return result = Number(num1) * Number(num2);
 }
 
 function divide(num1, num2){
-    return num1 / num2;
+    return result = Number(num1) / Number(num2);
 }
 
 function operate(){
@@ -37,6 +37,14 @@ function operate(){
         return alert("error")
     }
     
+}
+
+function clearVar(){
+     userNumber1 = ""
+     userNumber2 = ""
+     userOperator = ""
+     display = 0
+     result = 0
 }
 
 function updateDisplay(){
@@ -138,7 +146,7 @@ zero.addEventListener('click', () =>{
 
 const divideBtn = document.querySelector('#divide')
 divideBtn.addEventListener('click', () =>{
-    userOperator = "÷";
+    userOperator = "/";
     updateDisplay();
 })
 const addBtn = document.querySelector('#add')
@@ -155,4 +163,18 @@ const multiplyBtn = document.querySelector('#multiply')
 multiplyBtn.addEventListener('click', () =>{
     userOperator = "*";
     updateDisplay();
+})
+const equalsBtn = document.querySelector('#equals')
+equalsBtn.addEventListener('click', () =>{
+    operate();
+    userNumber2 = "";
+    userOperator = "";
+    userNumber1 = result;
+    display = result;
+    content.textContent=(display);
+})
+const clearBtn = document.querySelector('#c')
+clearBtn.addEventListener('click', () =>{
+    clearVar();
+    content.textContent=(display);
 })
