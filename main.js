@@ -17,7 +17,12 @@ function multiply(num1, num2){
 }
 
 function divide(num1, num2){
-    return result = Number(num1) / Number(num2);
+    if( num2 == 0){
+        return alert("Don't be silly!")
+    }
+    else{
+        return result = Number(num1) / Number(num2);   
+    }
 }
 
 function operate(){
