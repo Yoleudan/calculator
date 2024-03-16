@@ -44,12 +44,23 @@ function updateDisplay(){
     return content.textContent = (display);
 }
 
-function appendOrReplace(input){
-    if (userNumber1 === 0){
-        userNumber1 = input.toString();
+function appendOrReplace(input, arg){
+    if (userOperator === ""){
+        if (userNumber1 === 0){
+            userNumber1 = input.toString();
+        }
+        else{
+            userNumber1 += input.toString();
+        }
     }
     else{
-        userNumber1 += input.toString();
+        userNumber2;
+        if (userNumber2 === 0){
+            userNumber2 = input.toString();
+        }
+        else{
+            userNumber2 += input.toString();
+        }
     }
 
 }
@@ -88,6 +99,12 @@ four.addEventListener('click', () =>{
     console.log(userNumber1)
 })
 const five = document.querySelector('#five')
+five.addEventListener('click', () =>{
+    appendOrReplace(5);
+    updateDisplay();
+    console.log(userNumber1)
+})
+const six = document.querySelector('#six')
 six.addEventListener('click', () =>{
     appendOrReplace(6);
     updateDisplay();
